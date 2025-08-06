@@ -1,0 +1,121 @@
+<app-header></app-header>
+<div class="container">
+    <div class="header">
+        <a href="javascript:void(0);" (click)="goBackToCart()">
+            <i class="fas fa-arrow-left"></i> 
+            Quay lại giỏ hàng
+        </a>
+    </div>
+
+    <div class="product-list">
+        <div *ngFor="let item of selectedProducts" class="product-item">
+            <img [src]="getImagePath(item.product.image)" alt="{{ item.product.name }}" height="60" />
+            <div class="product-details">
+                <p class="product-name">{{ item.product.name }}</p>
+                <p class="product-quantity">Số Lượng: {{ item.quantity }}</p>
+            </div>
+        </div>
+    </div>
+    
+
+    <form [formGroup]="orderForm" (ngSubmit)="onSubmit()" class="form-section">
+        <h3><i class="fas fa-map-marker-alt"></i> Địa chỉ nhận hàng</h3>
+
+        <!-- Họ và tên -->
+        <div>
+            <div *ngIf="orderForm.get('fullName')?.invalid && orderForm.get('fullName')?.touched" class="error-message">
+                Vui lòng nhập họ và tên.
+            </div>
+            <input type="text" id="fullName" placeholder="Họ và tên người nhận" formControlName="fullName" 
+                   [ngClass]="{'invalid-field': orderForm.get('fullName')?.invalid && orderForm.get('fullName')?.touched}" 
+                   class="full-width">
+        </div>
+
+        <!-- Số điện thoại -->
+        <div>
+            <div *ngIf="orderForm.get('phoneNumber')?.invalid && orderForm.get('phoneNumber')?.touched" class="error-message">
+                Vui lòng nhập số điện thoại hợp lệ (10-11 chữ số).
+            </div>
+            <input type="text" id="phoneNumber" placeholder="Số điện thoại" formControlName="phoneNumber" 
+                   [ngClass]="{'invalid-field': orderForm.get('phoneNumber')?.invalid && orderForm.get('phoneNumber')?.touched}" 
+                   class="full-width">
+        </div>
+
+        <!-- Chọn Tỉnh/Thành phố -->
+        <div>
+            <div *ngIf="orderForm.get('province')?.invalid && orderForm.get('province')?.touched" class="error-message">
+                Vui lòng chọn tỉnh/thành phố.
+            </div>
+            <select id="province" formControlName="province" class="full-width" 
+                    [ngClass]="{'invalid-field': orderForm.get('province')?.invalid && orderForm.get('province')?.touched}">
+                <option value="">Chọn tỉnh/thành phố</option>
+                <option *ngFor="let province of provinces" [value]="province.id">{{ province.name }}</option>
+            </select>
+        </div>
+
+        <!-- Chọn Quận/Huyện -->
+        <div>
+            <div *ngIf="orderForm.get('district')?.invalid && orderForm.get('district')?.touched" class="error-message">
+                Vui lòng chọn quận/huyện.
+            </div>
+            <select id="district" formControlName="district" class="full-width" 
+                    [ngClass]="{'invalid-field': orderForm.get('district')?.invalid && orderForm.get('district')?.touched}">
+                <option value="">Chọn quận/huyện</option>
+                <option *ngFor="let district of filteredDistricts" [value]="district.id">{{ district.name }}</option>
+            </select>
+        </div>
+
+        <!-- Chọn Phường/Xã -->
+        <div>
+            <div *ngIf="orderForm.get('ward')?.invalid && orderForm.get('ward')?.touched" class="error-message">
+                Vui lòng chọn phường/xã.
+            </div>
+            <select id="ward" formControlName="ward" class="full-width" 
+                    [ngClass]="{'invalid-field': orderForm.get('ward')?.invalid && orderForm.get('ward')?.touched}">
+                <option value="">Chọn phường/xã</option>
+                <option *ngFor="let ward of filteredWards" [value]="ward.id">{{ ward.name }}</option>
+            </select>
+        </div>
+
+        <!-- Địa chỉ email -->
+    <div>
+        <div *ngIf="orderForm.get('email')?.invalid && orderForm.get('email')?.touched" class="error-message">
+            Vui lòng nhập địa chỉ email hợp lệ.
+        </div>
+        <input type="email" id="email" placeholder="Địa chỉ email" formControlName="email" 
+            [ngClass]="{'invalid-field': orderForm.get('email')?.invalid && orderForm.get('email')?.touched}" 
+            class="full-width">
+    </div>
+
+        <!-- Địa chỉ cụ thể -->
+        <div>
+            <div *ngIf="orderForm.get('address')?.invalid && orderForm.get('address')?.touched" class="error-message">
+                Vui lòng nhập địa chỉ cụ thể.
+            </div>
+            <input type="text" id="address" placeholder="Nhập địa chỉ cụ thể" formControlName="address" 
+                   [ngClass]="{'invalid-field': orderForm.get('address')?.invalid && orderForm.get('address')?.touched}" 
+                   class="full-width">
+        </div>
+
+        <!-- Ghi chú (không bắt buộc) -->
+        <div>
+            <input type="text" id="note" placeholder="Ghi chú (không bắt buộc)" formControlName="note" class="full-width">
+        </div>
+
+        <div class="summary">
+            <p>Tổng tiền: {{ orderData.totalAmount }} VND</p>
+            <p>Phí vận chuyển: Miễn phí</p>
+            <p class="total">Thành tiền: {{ orderData.totalAmount }} VND</p>
+            <button type="submit" class="complete-button">Hoàn tất</button>
+            <p class="terms">
+                Bằng việc tiến hành đặt mua hàng, bạn đồng ý với <a href="#">Điều khoản dịch vụ</a> và
+                <a href="#">Chính sách xử lý dữ liệu cá nhân</a> của Nhà thuốc FPT Long Châu.
+            </p>
+        </div>
+
+        <!-- Hiển thị thông báo thành công hoặc lỗi -->
+        <div *ngIf="message" class="notification" [ngClass]="{'success': paymentSuccess, 'error': !paymentSuccess}">
+            {{ message }}
+        </div>
+    </form>
+</div>

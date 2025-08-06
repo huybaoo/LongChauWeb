@@ -1,0 +1,358 @@
+header {
+  background-color: #206ee4; /* Màu nền của header */
+  color: white; /* Màu chữ trong header */
+  padding: 0px; /* Khoảng cách trong header */
+  display: flex; /* Sử dụng Flexbox */
+  justify-content: space-between; /* Căn giữa các phần tử */
+  align-items: center; /* Căn giữa theo chiều dọc */
+}
+
+.header-container {
+flex: 1; /* Chiếm không gian còn lại trong header */
+display: flex; /* Sử dụng Flexbox cho header container */
+align-items: center; /* Căn giữa các phần tử trong container */
+}
+
+.logo {
+display: flex;
+width: 20%;
+
+}
+
+.search-container {
+display: flex; /* Sử dụng Flexbox để căn chỉnh thanh tìm kiếm */
+align-items: center; /* Căn giữa theo chiều dọc */
+background-color: #f0f0f0; /* Màu nền của thanh tìm kiếm */
+border-radius: 25px; /* Bo tròn các góc của thanh tìm kiếm */
+padding: 5px 10px; /* Khoảng cách bên trong thanh tìm kiếm */
+width: 100%; /* Chiếm toàn bộ chiều rộng */
+max-width: 1000px; /* Giới hạn chiều rộng tối đa */
+}
+
+.search-input {
+border: none; /* Không viền */
+background: transparent; /* Nền trong suốt */
+outline: none; /* Không viền khi được chọn */
+flex: 1; /* Chiếm toàn bộ không gian còn lại */
+font-size: 16px; /* Kích thước chữ */
+border-radius: 25px; /* Bo tròn các góc của ô nhập */
+}
+
+.search-button {
+background: transparent; /* Nền trong suốt */
+border: none; /* Không viền */
+cursor: pointer; /* Hiển thị con trỏ tay khi di chuột qua */
+border-radius: 50%; /* Bo tròn biểu tượng tìm kiếm */
+padding: 5px; /* Khoảng cách bên trong nút */
+}
+
+.search-button img {
+width: 20px; /* Kích thước biểu tượng tìm kiếm */
+height: auto; /* Tự động điều chỉnh chiều cao */
+}
+
+.nav-icons {
+display: flex; /* Sử dụng Flexbox cho các biểu tượng điều hướng */
+align-items: center; /* Căn giữa các biểu tượng theo chiều dọc */
+}
+
+.nav-icons img {
+margin-left: 30px; /* Khoảng cách bên trái cho các biểu tượng */
+cursor: pointer; /* Hiển thị con trỏ tay khi di chuột qua biểu tượng */
+max-width: 30px; /* Giới hạn chiều rộng tối đa */
+max-height: 30px; /* Giới hạn chiều cao tối đa */
+width: auto; /* Tự động điều chỉnh chiều rộng */
+height: auto; /* Tự động điều chỉnh chiều cao */
+}
+
+nav {
+background-color: #ffffff; /* Màu nền của thanh điều hướng */
+padding: 10px 0; /* Khoảng cách trên và dưới cho thanh điều hướng */
+box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Đổ bóng cho thanh điều hướng */
+}
+
+nav ul {
+list-style: none; /* Xóa dấu đầu dòng trong danh sách */
+padding: 0; /* Xóa khoảng cách trong danh sách */
+display: flex; /* Sử dụng Flexbox cho danh sách */
+justify-content: center; /* Căn giữa danh sách */
+}
+
+nav ul li {
+margin: 0 40px; /* Khoảng cách bên trái và bên phải cho từng mục */
+}
+
+nav ul li a {
+text-decoration: none; /* Không gạch chân liên kết */
+color: #000000; /* Màu chữ cho liên kết */
+font-weight: bold; /* Chữ đậm cho liên kết */
+}
+
+.container {
+  display: flex;
+  padding: 20px;
+}
+
+.cart-items {
+  flex-grow: 1;
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-right: 20px;
+}
+/* Style cho container chứa checkbox "Chọn tất cả" */
+.select-all {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  font-size: 16px;
+  color: #333;
+}
+
+.select-all input[type="checkbox"] {
+  margin-right: 10px; /* Khoảng cách giữa checkbox và label */
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  accent-color: #28a745; /* Màu sắc cho checkbox khi được chọn */
+}
+
+.select-all span {
+  cursor: pointer;
+  font-weight: bold;
+  user-select: none;
+}
+
+/* Thêm hiệu ứng hover cho phần text */
+.select-all span:hover {
+  color: #007bff; /* Màu khi hover vào chữ */
+}
+
+/* Tạo hiệu ứng hover cho checkbox */
+.select-all input[type="checkbox"]:hover {
+  background-color: #f0f0f0; /* Màu nền khi hover vào checkbox */
+}
+
+/* Tùy chỉnh màu sắc khi checkbox được chọn */
+.select-all input[type="checkbox"]:checked {
+  accent-color: #007bff; /* Màu khi chọn */
+}
+
+.select-all input[type="checkbox"]:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+.cart-item {
+  position :relative; /* Cần thiết để định vị vị trí của icon */
+  padding-left: 15px;
+  border: 1px solid #ddd;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  font-size: 20px;
+}
+
+.cart-item-details {
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+}
+
+.cart-item-remove {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  color: #ff0000; /* Màu đỏ cho icon xóa */
+  font-size: 20px;
+  transition: color 0.3s;
+}
+
+.cart-item-remove:hover {
+  color: #cc0000; /* Màu đỏ đậm khi hover */
+}
+
+.cart-item-image {
+  width: 60px;
+  height: 60px;
+  margin-right: 10px;
+}
+
+.cart-item-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.cart-item-name {
+  font-size: 16px;
+  font-weight: bold;
+  color: #1a51a2;
+}
+
+.cart-item-price {
+  color: #888;
+}
+
+.cart-item-quantity input {
+  width: 50px;
+  padding: 5px;
+  margin-right: 10px;
+}
+
+.summary {
+  margin-top: 20px;
+}
+
+.total {
+  display: flex;
+  justify-content: space-between;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.checkout {
+  background-color: #28a745;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  cursor: pointer;
+  font-size: 18px;
+  border-radius: 5px;
+}
+
+.checkout:hover {
+  background-color: #218838;
+}
+
+
+.cart-items h2 {
+  margin-top: 0;
+}
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+  padding: 10px 0;
+}
+
+.cart-item img {
+  height: 70px;
+  margin-right: 70px;
+}
+
+.cart-item .details {
+  flex-grow: 1;
+}
+
+.cart-item .details h3 {
+  margin: 0;
+  font-size: 16px;
+}
+
+.cart-item .details .price {
+  color: #f22121;
+  font-weight: bold;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.cart-item .details .old-price {
+  text-decoration: line-through;
+  color: #888;
+  margin-left: 10px;
+}
+
+.cart-item .quantity {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cart-item .quantity input {
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  border: 1px solid #ddd;
+  border-radius: 50%; /* Bo tròn */
+  margin: 0 10px;
+  font-size: 10px; /* Kích thước chữ */
+  opacity: 1;
+  transition: background-color 0.3s, border-color 0.3s; /* Hiệu ứng khi hover */
+}
+
+.cart-item .quantity .fa-trash {
+  color: #1a51a2;
+  cursor: pointer;
+  padding: 20px;
+  padding-left: 30px;
+  width: 20px;
+  height: 20px;
+  border-radius: 30px;
+}
+
+.summary {
+  width: 300px;
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.summary h2 {
+  margin-top: 0;
+}
+
+.summary .total {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
+}
+
+.summary .total .price {
+  color: #f22121;
+  font-weight: bold;
+
+}
+
+.summary .checkout {
+  background-color:#1a51a2;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.recently-viewed {
+  margin-top: 20px;
+}
+
+.recently-viewed h2 {
+  margin-bottom: 10px;
+}
+
+.recently-viewed .products {
+  display: flex;
+}
+
+.recently-viewed .product {
+  background-color: white;
+  padding: 10px;
+  border-radius: 10px;
+  margin-right: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.recently-viewed .product .price {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #ff6f00;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 10px;
+}

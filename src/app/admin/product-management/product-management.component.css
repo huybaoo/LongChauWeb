@@ -1,0 +1,43 @@
+.product-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.product-table th,
+.product-table td {
+    border: 1px solid #ddd; /* Đường viền cho các ô */
+    padding: 12px; /* Khoảng cách bên trong ô */
+    text-align: left; /* Canh trái nội dung */
+}
+
+.product-table th {
+    background-color: #f2f2f2; /* Màu nền cho tiêu đề */
+    font-weight: bold; /* Làm đậm tiêu đề */
+}
+
+.product-table tr:nth-child(even) {
+    background-color: #f9f9f9; /* Màu nền cho các dòng chẵn */
+}
+
+.product-table tr:hover {
+    background-color: #f1f1f1; /* Màu nền khi di chuột vào dòng */
+}
+.product-table .btn {
+    cursor: pointer; /* Đổi con trỏ thành ngón tay khi trỏ vào nút */
+    border: none; /* Xóa đường viền của nút */
+    background: none; /* Loại bỏ màu nền */
+    padding: 0; /* Xóa khoảng cách */
+    margin-right: 20px; /* Thêm khoảng cách giữa các nút */
+
+  }
+  .product-table .btn img {
+    vertical-align: middle; /* Căn giữa hình ảnh theo chiều dọc */
+  }
+  
+  .product-table .btn:hover {
+    background-color: #e2e6ea; /* Thay đổi màu nền khi di chuột vào */
+  }
+  .product-table td:nth-child(4) {
+    text-align: center; /* Căn giữa cột "Số lượng" */
+  }

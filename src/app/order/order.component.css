@@ -1,0 +1,309 @@
+.full-width {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* Đảm bảo padding và border nằm trong chiều rộng đã chỉ định */
+    height: 40px; /* Đặt chiều cao cố định cho tất cả các trường */
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 80%;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+header {
+    background-color: #206ee4; /* Màu nền của header */
+    color: white; /* Màu chữ trong header */
+    padding: 0px; /* Khoảng cách trong header */
+    display: flex; /* Sử dụng Flexbox */
+    justify-content: space-between; /* Căn giữa các phần tử */
+    align-items: center; /* Căn giữa theo chiều dọc */
+}
+
+.header-container {
+    flex: 1; /* Chiếm không gian còn lại trong header */
+    display: flex; /* Sử dụng Flexbox cho header container */
+    align-items: center; /* Căn giữa các phần tử trong container */
+}
+
+.logo {
+    display: flex;
+    width: 20%;
+}
+
+.search-container {
+    display: flex; /* Sử dụng Flexbox để căn chỉnh thanh tìm kiếm */
+    align-items: center; /* Căn giữa theo chiều dọc */
+    background-color: #f0f0f0; /* Màu nền của thanh tìm kiếm */
+    border-radius: 25px; /* Bo tròn các góc của thanh tìm kiếm */
+    padding: 5px 10px; /* Khoảng cách bên trong thanh tìm kiếm */
+    width: 100%; /* Chiếm toàn bộ chiều rộng */
+    max-width: 1000px; /* Giới hạn chiều rộng tối đa */
+}
+
+.search-input {
+    border: none; /* Không viền */
+    background: transparent; /* Nền trong suốt */
+    outline: none; /* Không viền khi được chọn */
+    flex: 1; /* Chiếm toàn bộ không gian còn lại */
+    font-size: 16px; /* Kích thước chữ */
+    border-radius: 25px; /* Bo tròn các góc của ô nhập */
+}
+
+.search-button {
+    background: transparent; /* Nền trong suốt */
+    border: none; /* Không viền */
+    cursor: pointer; /* Hiển thị con trỏ tay khi di chuột qua */
+    border-radius: 50%; /* Bo tròn biểu tượng tìm kiếm */
+    padding: 5px; /* Khoảng cách bên trong nút */
+}
+
+.search-button img {
+    width: 20px; /* Kích thước biểu tượng tìm kiếm */
+    height: auto; /* Tự động điều chỉnh chiều cao */
+}
+
+.nav-icons {
+    display: flex; /* Sử dụng Flexbox cho các biểu tượng điều hướng */
+    align-items: center; /* Căn giữa các biểu tượng theo chiều dọc */
+}
+
+.nav-icons img {
+    margin-left: 30px; /* Khoảng cách bên trái cho các biểu tượng */
+    cursor: pointer; /* Hiển thị con trỏ tay khi di chuột qua biểu tượng */
+    max-width: 30px; /* Giới hạn chiều rộng tối đa */
+    max-height: 30px; /* Giới hạn chiều cao tối đa */
+    width: auto; /* Tự động điều chỉnh chiều rộng */
+    height: auto; /* Tự động điều chỉnh chiều cao */
+}
+
+nav {
+    background-color: #ffffff; /* Màu nền của thanh điều hướng */
+    padding: 10px 0; /* Khoảng cách trên và dưới cho thanh điều hướng */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Đổ bóng cho thanh điều hướng */
+}
+
+nav ul {
+    list-style: none; /* Xóa dấu đầu dòng trong danh sách */
+    padding: 0; /* Xóa khoảng cách trong danh sách */
+    display: flex; /* Sử dụng Flexbox cho danh sách */
+    justify-content: center; /* Căn giữa danh sách */
+}
+
+nav ul li {
+    margin: 0 40px; /* Khoảng cách bên trái và bên phải cho từng mục */
+}
+
+nav ul li a {
+    text-decoration: none; /* Không gạch chân liên kết */
+    color: #000000; /* Màu chữ cho liên kết */
+    font-weight: bold; /* Chữ đậm cho liên kết */
+}
+
+.header a {
+    color: #007bff;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.product-list {
+    margin-top: 1rem;
+}
+ 
+
+.product-list img {
+    width: 60px;
+    height: 60px;
+    margin-right: 20px;
+}
+
+.product-details {
+    margin-left: 1rem; /* Khoảng cách giữa hình ảnh và chi tiết sản phẩm */
+}
+.product-item {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 1rem; /* Khoảng cách giữa các sản phẩm */
+}
+
+.product-details p {
+    margin: 0;
+    font-size: 14px;
+}
+
+.product-details .discount {
+    color: #007bff;
+    font-size: 12px;
+}
+
+.product-price {
+    text-align: right;
+}
+
+.product-price p {
+    margin: 0;
+    font-size: 14px;
+}
+
+.product-price .original-price {
+    text-decoration: line-through;
+    color: #999;
+}
+.product-name {
+    font-weight: bold;
+}
+
+.product-quantity {
+    color: #555;
+    font-size: 0.9rem;
+}
+
+
+  
+
+.delivery-method {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.delivery-method button {
+    background-color: #e0e0e0;
+    border: none;
+    padding: 10px 20px;
+    margin: 0 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.delivery-method button.active {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.form-section {
+    margin-bottom: 20px;
+}
+
+.form-section h3 {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.form-section h3 i {
+    margin-right: 10px;
+}
+
+.form-section input,
+.form-section select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.summary {
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.summary p {
+    margin: 0;
+    font-size: 14px;
+}
+
+.summary .total {
+    font-size: 18px;
+    font-weight: bold;
+    color: #007bff;
+}
+
+.summary .complete-button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.summary .terms {
+    font-size: 12px;
+    color: #999;
+    margin-top: 10px;
+}
+input, select {
+    height: 40px; /* Đặt chiều cao cố định cho các trường nhập và chọn */
+    line-height: 40px; /* Căn giữa văn bản trong trường */
+}
+.invalid-field {
+  border: 1px solid red;
+}
+
+.error-message {
+  color: red;
+  font-size: 0.9em;
+  margin-top: 4px;
+}
+/* order.component.css */
+.alert {
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 5px;
+  }
+  
+  .alert-success {
+    background-color: #d4edda;
+    color: #155724;
+  }
+  
+  .alert-danger {
+    background-color: #f8d7da;
+    color: #721c24;
+  }
+  
+  .error-message {
+    color: red;
+  }
+  
+  .invalid-field {
+    border: 1px solid red;
+  }
+  
+/* order.component.css */
+
+.notification {
+  padding: 15px;
+  margin: 10px 0;
+  border-radius: 5px;
+  color: #fff;
+}
+
+.success {
+  background-color: #4caf50; /* Màu xanh cho thông báo thành công */
+}
+
+.error {
+  background-color: #f44336; /* Màu đỏ cho thông báo thất bại */
+}

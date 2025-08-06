@@ -1,0 +1,27 @@
+<div *ngIf="order; else loading">
+  <h2>Chi tiết đơn hàng</h2>
+  <p><strong>-ID:</strong> {{ order._id }}</p>
+  <p><strong>-Tên khách hàng:</strong> {{ order.fullName }}</p>
+  <p><strong>-SĐT:</strong> {{ order.phoneNumber }}</p>
+  <p><strong>-Ngày đặt hàng:</strong> {{ order.order_date | date: 'short' }}</p>
+  <p><strong>-Địa chỉ:</strong> {{ order.address }}, {{ order.ward }}, {{ order.district }}</p>
+  <p><strong>-Ghi chú:</strong> {{ order.note }}</p>
+  <p><strong>-Tổng tiền:</strong> {{ order.total_amount }} VNĐ</p>
+  <p><strong>-Tình trạng:</strong> {{ order.status }}</p>
+
+  <h3>Sản phẩm:</h3>
+  <ul>
+    <li *ngFor="let product of order.products">
+      {{ product.name }} - GIÁ : {{ product.price }} VNĐ X {{ product.quantity }}
+      <button *ngIf="order.status === 'Đã xác nhận'"
+              (click)="rateProduct(order._id, product._id)"
+              class="danhgia">
+          Đánh giá
+      </button>
+    </li>
+  </ul>
+</div>
+<button class="quaylai" (click)="goBack()">Quay lại</button>
+<ng-template #loading>
+  <p>Đang tải...</p>
+</ng-template>

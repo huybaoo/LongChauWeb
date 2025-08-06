@@ -1,0 +1,81 @@
+.container {
+    max-width: 600px; /* Kích thước tối đa của container */
+    margin: 20px auto; /* Căn giữa container */
+    padding: 20px; /* Khoảng cách bên trong */
+    border: 1px solid #ccc; /* Đường viền */
+    border-radius: 8px; /* Bo góc */
+    background-color: #f9f9f9; /* Màu nền */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Đổ bóng */
+}
+
+h2 {
+    text-align: center; /* Căn giữa tiêu đề */
+    color: #333; /* Màu chữ */
+}
+
+.form-group {
+    margin-bottom: 15px; /* Khoảng cách giữa các nhóm */
+}
+
+label {
+    font-weight: bold; /* Làm đậm chữ */
+    margin-bottom: 5px; /* Khoảng cách bên dưới label */
+    display: block; /* Hiển thị label dưới dạng block */
+}
+
+input[type="text"],
+input[type="number"] {
+    width: 100%; /* Đặt chiều rộng 100% */
+    padding: 10px; /* Khoảng cách bên trong */
+    font-size: 16px; /* Kích thước chữ */
+    border: 1px solid #ccc; /* Đường viền */
+    border-radius: 4px; /* Bo góc */
+    transition: border 0.3s; /* Hiệu ứng chuyển tiếp cho viền */
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus {
+    border-color: #007bff; /* Màu viền khi focus */
+    outline: none; /* Ẩn outline mặc định */
+}
+
+.btn {
+    padding: 10px; /* Khoảng cách bên trong */
+    font-size: 18px; /* Kích thước chữ */
+    border-radius: 4px; /* Bo góc */
+    flex: 1; /* Đảm bảo nút chiếm toàn bộ không gian trong div */
+}
+.d-flex {
+    display: flex; /* Hiển thị các phần tử dưới dạng flexbox */
+}.justify-content-between {
+    justify-content: space-between; /* Phân phối không gian giữa các phần tử */
+}
+
+.me-2 {
+    margin-right: 0.5rem; /* Khoảng cách bên phải cho nút "Cập nhật" */
+}
+
+.flex-fill {
+    flex: 1; /* Nút sẽ chiếm toàn bộ chiều rộng còn lại */
+}
+.btn-primary {
+    cursor: pointer;
+    background-color: #2a07f4f1; /* Màu nền nút chính */
+    color: white; /* Màu chữ */
+}
+
+.btn-secondary {
+    cursor: pointer;
+    background-color: #2a07f4f1; /* Màu nền nút phụ */
+    color: white; /* Màu chữ */
+}
+
+.btn:hover {
+    opacity: 0.9; /* Hiệu ứng mờ khi hover */
+}
+
+a {
+    text-decoration: none; /* Ẩn gạch chân cho link */
+    display: inline-block; /* Để có thể căn giữa */
+    text-align: center; /* Căn giữa chữ */
+}

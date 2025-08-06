@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng Nhập</title>
+    <link rel="stylesheet" href="login.component.css">
+</head>
+
+<body>
+    <div class="login-box">
+        <div class="login-header">
+            <header>Đăng Nhập</header>
+        </div>
+        <form (ngSubmit)="onSubmit()">
+            <div class="input-box">
+                <input type="text" class="input-field" [(ngModel)]="username" name="username" placeholder="Tên đăng nhập" required autocomplete="off">
+            </div>
+            <div class="input-box">
+                <input type="password" class="input-field" [(ngModel)]="password" name="password" placeholder="Mật khẩu" required autocomplete="off">
+            </div>
+            <div class="forgot">
+
+                <section>
+                    <a href="#">Quên mật khẩu?</a>
+                </section>
+            </div>
+            <div class="input-submit">
+                <button class="submit-btn" id="submit" type="submit"></button>
+                <label for="submit">Đăng Nhập</label>
+            </div>
+        </form>
+        <div class="sign-up-link">
+            <p>Chưa có tài khoản? <a href="register">Đăng Ký</a></p>
+        </div>
+    </div>
+</body>
+
+</html>

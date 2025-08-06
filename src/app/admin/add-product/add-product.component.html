@@ -1,0 +1,39 @@
+<div class="container">
+    <h1>Thêm Sản Phẩm</h1>
+    <form (ngSubmit)="addProduct()">
+        <div class="form-group">
+            <label for="product-name">Tên Sản Phẩm</label>
+            <input type="text" id="product-name" [(ngModel)]="product.name" name="name" placeholder="Tên Sản Phẩm" required>
+        </div>
+
+        <div class="form-group">
+            <label for="product-image">Ảnh Sản Phẩm</label>
+            <input type="file" id="product-image" (change)="onImageSelect($event)" accept="image/*">
+            <img *ngIf="product.image" [src]="product.image" alt="Product Image" class="preview-image">
+        </div>
+
+        <div class="form-group">
+            <label for="category-id">Category ID</label>
+            <input type="text" id="category-id" [(ngModel)]="product.category_id" name="category_id" placeholder="Nhập Category ID" required>
+        </div>
+
+        <div class="form-group">
+            <label for="price">Giá Bán</label>
+            <input type="number" id="price" [(ngModel)]="product.price" name="price" placeholder="Giá Bán" required>
+        </div>
+
+        <div class="form-group">
+            <label for="quantity">Số lượng</label>
+            <input type="number" id="quantity" [(ngModel)]="product.quantity" name="quantity" placeholder="Số lượng" required>
+        </div>
+
+        <div class="form-group">
+            <label for="description">Mô Tả</label>
+            <div class="editor-content" contenteditable="true" [(ngModel)]="product.description" name="description" data-placeholder="Đặc Điểm Nổi Bật"></div>
+        </div>
+
+        <div class="form-group">
+            <button type="submit" class="btn-submit">Thêm Sản Phẩm</button>
+        </div>
+    </form>
+</div>

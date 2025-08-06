@@ -1,0 +1,54 @@
+<app-header></app-header>
+
+<!-- Phần sản phẩm chính -->
+<div class="product-detail">
+  <div class="row">
+    <div class="col-image">
+      <img [src]="getImagePath(product?.image)" alt="{{ product?.name }}" class="product-image">
+    </div>
+    <div class="col-info">
+      <div class="product-info">
+        <h2>{{ product?.name || 'Loading...' }}</h2>
+        <p>{{ product?.description }}</p>
+        <p class="box-price">Giá: {{ product?.price | number: '1.0-0' }} VNĐ</p>
+        <div class="actions">
+          <button class="btn btn-primary btn-lg" (click)="addToCart()">Thêm vào giỏ</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Phần sản phẩm liên quan -->
+<div class="related-products-section">
+  <h2>Sản phẩm liên quan</h2>
+  <div class="related-products">
+    <div class="related-product" *ngFor="let product of relatedProducts">
+      <img [src]="getImagePath(product.image)" alt="{{ product.name }}" class="related-product-image">
+      <div class="product-details">
+        <h3>{{ product.name }}</h3>
+        <p class="box-price">Giá: {{ product?.price | number: '1.0-0' }} VNĐ</p>
+        <a [routerLink]="['/product', product._id]" class="btn btn-secondary">Xem chi tiết</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Đánh giá -->
+<div class="ratings-section">
+  <h3>Đánh giá</h3>
+  <ul class="ratings-list">
+    <li *ngFor="let rating of ratings" class="rating-item">
+      <div class="rating-content">
+        <div class="rating-stars">
+          <span *ngFor="let star of [1, 2, 3, 4, 5]" [class.filled]="star <= rating.rating">★</span>
+        </div>
+        <div class="rating-details">
+          <p class="rating-comment">"{{ rating.comment }}"</p>
+          <small class="rating-user">Đánh giá bởi: <strong>{{ rating.username || 'Người dùng' }}</strong></small>
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>
+

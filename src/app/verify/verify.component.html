@@ -1,0 +1,17 @@
+<div class="verify-container">
+    <h2>Xác Nhận Mã</h2>
+    <form (ngSubmit)="verifyCode()">
+        <label for="verificationCode">Mã xác nhận:</label>
+        <input 
+            type="text" 
+            [(ngModel)]="verificationCode" 
+            name="verificationCode" 
+            placeholder="Nhập mã xác nhận" 
+            required>
+        <button type="submit">Xác Nhận</button>
+    </form>
+    
+    <div *ngIf="message" class="message">
+        {{ message }}
+    </div>
+</div>

@@ -1,0 +1,30 @@
+<app-header-admin></app-header-admin>
+<table class="product-table">
+  <thead>
+    <tr>
+      <th>Số thứ tự</th>
+      <th>Tên sản phẩm</th>
+      <th>Hình ảnh</th>
+      <th>Giá</th>
+      <th>Số lượng</th>
+      <th>Hành động</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let product of products; let i = index">
+      <td>{{ i + 1 }}</td>
+      <td>{{ product.name }}</td>
+      <td><img [src]="getImagePath(product.image)" style="width: 30px;"></td>
+      <td> {{ product.price }} VND</td>
+      <td>{{ product.stock }}</td>
+      <td>
+        <button class="btn btn-edit" (click)="editProduct(product)">
+          <img src="assets/edit-text.jpg" alt="Edit" width="24" height="24">
+        </button>
+        <button class="btn btn-delete" (click)="deleteProduct(product._id)">
+          <img src="assets/trash-can.jpg" alt="Delete" width="24" height="24">
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>

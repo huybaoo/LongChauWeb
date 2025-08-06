@@ -1,0 +1,48 @@
+<body>
+  <header>
+    <div class="header-container">
+      <div class="search-container">
+        <input
+          type="text"
+          class="search-input"
+          placeholder="Tìm tên thuốc, bệnh lý, thực phẩm chức năng..."
+          [(ngModel)]="searchTerm"
+          (input)="currentPage = 0"
+        />
+        <button class="search-button" aria-label="Tìm kiếm" (click)="search()">
+          <img src="assets/search.png" alt="Search Icon">
+        </button>
+      </div>
+      <div class="nav-icons">
+        <ul>
+          <a [routerLink]="['/cart']">
+            <img src="assets/CART.png" alt="Giỏ hàng" title="Giỏ hàng">
+          </a>
+
+          <li class="user-account" (mouseover)="showLogout = true" (mouseleave)="showLogout = false">
+            <a [routerLink]="['/login']" *ngIf="!currentUser">
+              <img src="assets/login.png" alt="Tài khoản" title="Tài khoản">
+              <span>Đăng nhập</span>
+            </a>
+            <span *ngIf="currentUser">{{ currentUser.username }}</span>
+            <div class="logout" *ngIf="currentUser && showLogout">
+              <a routerLink="/orders-user">Lịch sử mua hàng</a>
+              <div (click)="logout()">Đăng xuất</div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a routerLink="/">Trang chủ</a></li>
+      <li><a [routerLink]="[]" [queryParams]="{ category_id: '6730660a37f7db9a9463bfc1' }">Thực phẩm chức năng</a></li>
+      <li><a [routerLink]="[]" [queryParams]="{ category_id: '6730660a37f7db9a9463bfc2' }">Thiết bị y tế</a></li>
+      <li><a [routerLink]="[]" [queryParams]="{ category_id: '6730660a37f7db9a9463bfc3' }">Dược mỹ phẩm</a></li>
+      <li><a [routerLink]="[]" [queryParams]="{ category_id: '6730660a37f7db9a9463bfc4' }">Chăm sóc cá nhân</a></li>
+      <li><a [routerLink]="[]" [queryParams]="{ category_id: '6730660a37f7db9a9463bfc5' }">Chăm sóc trẻ em</a></li>
+    </ul>
+</nav>
+</body>

@@ -1,0 +1,55 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f2f2f2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-image: url('/assets/background.jpg');
+  background-size:cover;
+}
+
+.login-container {
+  background-color: white;
+  padding: 50px;
+  border-radius: 25px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  width: 400px;
+}
+
+.login-container h2 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.login-container input {
+  width: 94%;
+  padding: 12px;
+  margin-bottom: 25px;
+  border: 1px solid #ccc;
+  border-radius: 25px;
+}
+
+.login-container button {
+  width: 100%;
+  padding: 12px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  margin-bottom: 15px;
+}
+
+.login-container .forgot-password {
+  text-align: center;
+  margin: 15px;
+}
+.login-container .forgot-password a {
+  margin: 0 15px; /* Thêm khoảng cách 15px ở cả bên trái và bên phải */
+}
+.login-container a {
+  color: #007bff;
+  text-decoration: none;
+}

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng Ký</title>
+    <link rel="stylesheet" href="register.component.css">
+</head>
+
+<body>
+    <div class="register-container">
+        <h2>Đăng Ký</h2>
+        <form (ngSubmit)="onSubmit()">
+            <input type="text" [(ngModel)]="username" name="username" placeholder="Tên đăng nhập" required>
+            <input type="password" [(ngModel)]="password" name="password" placeholder="Mật khẩu" required>
+            <input type="email" [(ngModel)]="email" name="email" placeholder="Email" required>
+            <input type="text" [(ngModel)]="address" name="address" placeholder="Địa chỉ" required>
+            <input type="tel" [(ngModel)]="phone" name="phone" placeholder="Số điện thoại" required>
+            <button type="submit">Đăng Ký</button>
+        </form>
+        <p class="message">{{ message }}</p>
+        <button class="login-button"><a class="login-text" href="login">Đăng Nhập</a></button>
+    </div>
+</body>
+
+</html>

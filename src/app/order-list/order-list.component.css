@@ -1,0 +1,89 @@
+/* order-list.component.css */
+
+h2 {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0 auto;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+thead {
+    background-color: #007bff;
+    color: white;
+}
+
+th, td {
+    padding: 12px 15px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+tbody tr {
+    transition: background-color 0.3s;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+td {
+    font-size: 16px;
+    color: #555;
+}
+
+.no-orders {
+    text-align: center;
+    font-size: 18px;
+    color: #777;
+    margin-top: 20px;
+}
+/* Thêm vào order-list.component.css */
+
+th:first-child, td:first-child {
+    width: 80px; /* Đặt chiều rộng cho cột số thứ tự */
+    text-align: center; /* Căn giữa cho số thứ tự */
+}
+
+/* Định dạng nút */
+button.xemchitiet {
+    background-color: #007bff; /* Màu nền xanh dương */
+    color: white; /* Màu chữ trắng */
+    border: none; /* Không có viền */
+    border-radius: 5px; /* Bo góc */
+    padding: 10px 15px; /* Padding cho nút */
+    font-size: 16px; /* Kích thước chữ */
+    cursor: pointer; /* Con trỏ chuột khi di chuột qua */
+    transition: background-color 0.3s, transform 0.2s; /* Hiệu ứng chuyển tiếp */
+}
+
+button.xemchitiet:hover{
+    background-color: #0056b3; /* Màu nền khi hover */
+    transform: translateY(-2px); /* Hiệu ứng nâng lên khi hover */
+  }
+
+button.confirm-button {
+    background-color: #007bff; /* Màu nền xanh dương */
+    color: white; /* Màu chữ trắng */
+    border: none; /* Không có viền */
+    border-radius: 5px; /* Bo góc */
+    padding: 10px 15px; /* Padding cho nút */
+    font-size: 16px; /* Kích thước chữ */
+    cursor: pointer; /* Con trỏ chuột khi di chuột qua */
+    transition: background-color 0.3s, transform 0.2s; /* Hiệu ứng chuyển tiếp */
+}
+
+button.confirm-button:hover {
+    background-color: #0056b3; /* Màu nền khi hover */
+    transform: translateY(-2px); /* Hiệu ứng nâng lên khi hover */
+}

@@ -1,0 +1,42 @@
+<app-header-admin></app-header-admin>
+<div *ngIf="orders.length > 0; else noOrders">
+    <h2>Danh sách hóa đơn</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>STT</th>
+                <th>ID</th>
+                <th>Tên khách hàng</th>
+                <th>Ngày đặt hàng</th>
+                <th>Tổng tiền</th>
+                <th>Tình trạng</th>
+                <th>Chi tiết</th>
+                <th>Xác nhận</th> 
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let order of orders; let i = index"> 
+                <td>{{ i + 1 }}</td>
+                <td>{{ order._id }}</td>
+                <td>{{ order.fullName }}</td>
+                <td>{{ order.order_date | date:'short' }}</td>
+                <td>{{ order.total_amount }} VNĐ</td>
+                <td>{{ order.status }}</td>
+                <td>
+                    <button class="xemchitiet" (click)="viewOrderDetails(order._id)">Xem chi tiết</button>
+                </td>
+                <td>
+                    <button class="xacnhan"
+                        *ngIf="order.status !== 'Đã xác nhận' && order.status !== 'Đơn hàng đã hủy'" 
+                        (click)="confirmOrder(order)"
+                        class="confirm-button">
+                        Xác nhận
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<ng-template #noOrders>
+    <p class="no-orders">Không có đơn hàng nào.</p>
+</ng-template>

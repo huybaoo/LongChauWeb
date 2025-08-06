@@ -1,0 +1,30 @@
+<body>
+    <header>
+      <div class="header-container">
+        <div class="greeting-container">
+          <h1 *ngIf="username">Xin chào {{ username }}</h1>
+      </div>
+        <div class="search-container">
+          <input type="text" class="search-input" placeholder="Tìm tên thuốc, bệnh lý, thực phẩm chức năng...">
+          <button class="search-button" aria-label="Tìm kiếm">
+            <img src="assets/search.png" alt="Search Icon">
+          </button>
+        </div>
+        <div class="nav-icons">
+          <ul>
+                  <button (click)="logout()" class="logout-button" aria-label="Đăng xuất">
+                      <img src="assets/login.png" title="Đăng xuất" alt="Đăng xuất">
+                  </button>
+          </ul>
+      </div>
+      </div>
+    </header>
+  
+    <nav>
+      <ul>
+        <li><a [routerLink]="['/admin/products']">Quản lý sản phẩm</a></li>
+        <li><a [routerLink]="['/admin/orders']">Quản lý đơn hàng</a></li>
+        <li><a [routerLink]="['/add-product']">Thêm Sản Phẩm</a>
+      </ul>
+    </nav>
+</body>

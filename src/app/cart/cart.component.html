@@ -1,0 +1,37 @@
+<app-header></app-header>
+<div class="container">
+    <div class="cart-items">
+        <div class="select-all">
+            <input type="checkbox" [checked]="allProductsSelected" (change)="toggleSelectAll($event)" />
+            <span>Chọn tất cả sản phẩm</span>
+        </div>
+        <div class="cart-item" *ngFor="let item of products; let i = index">
+            <input type="checkbox" [checked]="item.selected" (change)="toggleProductSelection(i, $event)" />
+            <div class="details">
+                <h3>{{ item.product.name }}</h3>
+                <img [src]="getImagePath(item.product.image)" alt="{{ item.product.name }}" class="product-image">
+                <div class="price">{{ item.product.price | number }}đ</div>
+            </div>
+            <div class="quantity">
+                <button (click)="decreaseQuantity(i)" [disabled]="item.quantity <= 1">-</button>
+                <input type="text" [value]="item.quantity" readonly />
+                <button (click)="increaseQuantity(i)">+</button>
+                <div class="cart-item-actions">
+                    <!-- Nút xóa (biểu tượng thùng rác) -->
+                    <i class="fa fa-trash" (click)="confirmRemoveProduct(i)"></i> <!-- Biểu tượng thùng rác -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="summary">
+
+        <div class="total">
+            <span>Tổng tiền</span>
+            <span class="price">{{ totalAmount | number }}đ</span>
+        </div>
+        <div class="checkout" (click)="checkout()">Mua hàng</div>
+    </div>
+</div>
+
+<app-footer></app-footer>

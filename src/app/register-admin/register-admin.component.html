@@ -1,0 +1,14 @@
+<body>
+    <div class="login-container">
+      <h2>Đăng kí Quản Trị Viên</h2>
+      <form (ngSubmit)="onRegister()">
+        <input type="text" [(ngModel)]="username" name="username" placeholder="Tên đăng nhập" required>
+        <input type="password" [(ngModel)]="password" name="password" placeholder="Mật khẩu" required>
+        <input type="email" [(ngModel)]="email" name="email" placeholder="Email" required>
+        <button type="submit">Đăng kí</button>
+        <div class="forgot-password">
+          <a href="login-admin">Đăng nhập?</a>
+        </div>
+      </form>
+    </div>
+  </body>

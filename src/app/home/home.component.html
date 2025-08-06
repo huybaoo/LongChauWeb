@@ -1,0 +1,64 @@
+<app-header></app-header>
+  <div class="container">
+    <div class="promo-item">
+      <img src="assets/hh.webp" alt="Khuyến mãi 1" title="Khuyến mãi 1">
+    </div>
+  </div>
+
+  <div class="products">
+    <div class="product" *ngFor="let product of paginatedProducts">
+      <img [src]="getImagePath(product.image)" alt="{{ product.name }}">
+      <h3>{{ product.name }}</h3>
+      <p class="box-price">Giá: {{ product.price | currency: 'VND':'symbol':'1.0-0' }}</p>
+      <a [routerLink]="['/product', product._id]" class="button">Chọn sản phẩm</a>
+    </div>
+  </div>
+
+  <div class="pagination">
+    <button (click)="prevPage()" [disabled]="currentPage === 0"><=</button>
+    <span>{{ currentPage + 1 }}</span>
+    <button (click)="nextPage()" [disabled]="currentPage >= totalPages - 1">=></button>
+  </div>
+
+  <footer>
+    <div class="footer-container">
+      <div class="footer-section">
+        <h4>Về Chúng Tôi</h4>
+        <ul>
+          <li><a href="#">Giới thiệu nhà thuốc</a></li>
+          <li><a href="#">Chính sách vận chuyển</a></li>
+          <li><a href="#">Chính sách đổi trả</a></li>
+          <li><a href="#">Hướng dẫn mua hàng</a></li>
+          <li><a href="#">Liên hệ với chúng tôi</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Thông Tin Mua Hàng</h4>
+        <ul>
+          <li><a href="#">Phương thức thanh toán</a></li>
+          <li><a href="#">Hướng dẫn đặt hàng</a></li>
+          <li><a href="#">Tra cứu đơn hàng</a></li>
+          <li><a href="#">Chính sách bảo mật</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Trung Tâm Hỗ Trợ</h4>
+        <ul>
+          <li><a href="#">Câu hỏi thường gặp</a></li>
+          <li><a href="#">Chính sách bảo hành</a></li>
+          <li><a href="#">Liên hệ hỗ trợ</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Thông Tin Liên Hệ</h4>
+        <p>Trung tâm liên hệ: 1800 6928</p>
+        <p><img src="assets/QR.png" alt="QR Code"></p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2007 - 2024 Công ty Cổ Phần Dược Phẩm FPT Long Châu Số ĐKKD 0315275368 cấp ngày 17/09/2018 tại Sở Kế hoạch Đầu tư TPHCM</p>
+      <p>Địa chỉ: 379-381 Hai Bà Trưng, P. Võ Thị Sáu, Q.3, TP. HCM  ------  Số điện thoại: (028)73023456 ------  Người quản lý nội dung: Nguyễn Bạch Điệp</p>
+    </div>
+  </footer>
+
+

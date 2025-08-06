@@ -1,0 +1,17 @@
+<h2>Đánh giá sản phẩm</h2>
+<form (submit)="submitRating()">
+    <label for="rating">Đánh giá:</label>
+    <div class="star-rating">
+        <span *ngFor="let star of stars"
+              (click)="rating = star"
+              [class.filled]="star <= rating">
+            ★
+        </span>
+    </div>
+    <br>
+    <label for="comment">Nhận xét:</label>
+    <textarea [(ngModel)]="comment" name="comment"></textarea>
+    <br>
+    <button type="submit">Gửi đánh giá</button>
+    <button type="button" (click)="goBack()">Quay lại</button>
+</form>
