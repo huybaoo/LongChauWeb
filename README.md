@@ -1,27 +1,54 @@
-# Nhathuoclongchau11
+# LongChau - Website bán thuốc
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.7.
+**MernWeb** llà một website thương mại điện tử chuyên cung cấp các loại thuốc, thực phẩm chức năng và dược phẩm uy tín. Ứng dụng hỗ trợ người dùng đăng ký, cập nhật thông tin người dùng, đặt hàng, thanh toán, quản lý đơn hàng, và có trang admin để quản lý sản phẩm, người dùng.
 
-## Development server
+---
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Tính năng:
 
-## Code scaffolding
+### Người dùng
+- Đăng ký / Đăng nhập với email kèm mã xác nhận
+- Xem danh sách sản phẩm theo loại, tìm kiếm sản phẩm
+- Xem chi tiết sản phẩm, sản phẩm liên quan
+- Thêm sản phẩm vào giỏ hàng
+- Đặt hàng và thanh toán COD
+- Nhận hóa đơn qua email
+- Xem lịch sử đơn hàng
+- Theo dõi cập nhật trạng thái đơn hàng
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### Quản trị viên
+- Theo dõi và cập nhật trạng thái đơn hàng
+- Quản lí người dùng / sản phẩm 
+- Thêm / chỉnh sửa / xóa sản phẩm
 
-## Build
+---
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## 🛠 Công nghệ sử dụng
 
-## Running unit tests
+| Phần       | Công nghệ |
+|------------|-----------|
+| **Frontend** | Angular, HTML, CSS |
+| **Backend**  | Express.js, MongoDB, Mongoose |
+| **Email** | Nodemailer |
+---
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Hướng dẫn cài đặt
+1. Clone project
+- git clone https://github.com/huybaoo/LongChau.git
+- cd MernWeb
 
-## Running end-to-end tests
+2. Cài đặt và chạy frontend
+- ng serve
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+3. Cài đặt và chạy backend
+- cd src
+- cd app
+- node server.js
 
-## Further help
+---
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+## Tác giả
+Tên: [Nguyễn Huy Bảo]
+
+Email: [nhbao27204@gmail.com]
+
